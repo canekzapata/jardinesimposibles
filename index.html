@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estratos que piensan — generador poético v2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main>
+  <section class="canvas-wrap">
+    <div class="stack">
+      <canvas id="world" width="720" height="1000" aria-label="Generador poético pixelado ampliado"></canvas>
+      <canvas id="overlay" aria-hidden="true"></canvas>
+    </div>
+  </section>
+
+  <aside>
+    <h1>ESTRATOS QUE PIENSAN / v2</h1>
+    <p>Cartografía poética generativa: paisaje, diagrama, poema e interfaz como un mismo sistema. Cambia la <strong>semilla</strong>, el <strong>territorio</strong> y la <strong>paleta</strong>; genera <strong>series</strong>, exporta <strong>capas</strong> y activa la <strong>animación</strong> lenta.</p>
+
+    <label for="seed">semilla</label>
+    <input id="seed" value="memoria-sin-centro" autocomplete="off" />
+
+    <label for="mode">territorio dominante</label>
+    <select id="mode">
+      <option value="total">continuo completo</option>
+      <option value="aire">aire / montaña / bosque</option>
+      <option value="mar">litoral / mar / abismo</option>
+      <option value="tectonica">subsuelo / falla / núcleo</option>
+    </select>
+
+    <label for="palette">paleta cromática</label>
+    <select id="palette"></select>
+
+    <button id="regenerate">↻ reordenar mundo</button>
+    <button id="toggleText">T texto: activo</button>
+    <button id="toggleAnim">A animación: detenida</button>
+    <button id="save">S exportar PNG</button>
+
+    <div class="section">
+      <h2>series</h2>
+      <p class="hint">Misma ecología (territorio + paleta), la semilla muta de lámina en lámina.</p>
+      <div class="row">
+        <input id="seriesCount" type="number" min="2" max="12" value="6" aria-label="cantidad de láminas" />
+        <button id="buildSeries">generar serie</button>
+      </div>
+      <button id="exportSeries" disabled>exportar serie (PNG)</button>
+      <div id="seriesStrip" class="series-strip" aria-label="miniaturas de la serie"></div>
+    </div>
+
+    <div class="section">
+      <h2>capas por territorio</h2>
+      <p class="hint">Descarga PNG transparentes por territorio + una capa de texto, para componer fuera.</p>
+      <button id="exportLayers">exportar capas (PNG)</button>
+    </div>
+
+    <div class="meta">
+      <p>
+        <kbd>R</kbd> semilla &nbsp; <kbd>T</kbd> texto &nbsp;
+        <kbd>A</kbd> animación &nbsp; <kbd>P</kbd> paleta &nbsp; <kbd>S</kbd> exportar
+      </p>
+      <p><span class="pill">720 × 1000</span><span class="pill">6 paletas</span><span class="pill">series</span><span class="pill">capas</span><span class="pill">animación</span></p>
+      <p>Haz clic sobre el mapa para mutar la semilla. Clic en una miniatura de la serie para cargarla.</p>
+    </div>
+  </aside>
+</main>
+
+<script src="estratos.js"></script>
+</body>
+</html>
