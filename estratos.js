@@ -27,9 +27,9 @@
   const THUMB_H = Math.round(THUMB_W * (SCENE_H / SCENE_W));
 
   const CFG = {
-    baseTextSize: 16,
+    baseTextSize: 20,
     baseLeading: 18,
-    textMaxChars: 20,
+    textMaxChars: 25,
     extraNoise: 1.3,
     densityBoost: 1.9,
     symbolScale: 1.55,
